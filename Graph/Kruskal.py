@@ -20,13 +20,12 @@ class DisjointSet:
         self.parent[a] = self.find(self.parent[a])
         return self.parent[a]
 
-class Solution:
-    def get_min_cost(self, edges) -> int:
-        edges.sort()
-        ans = 0
-        ds = DisjointSet(n)
-        for u, v, w in edges:
-            if ds.find(u) != ds.find(v):
-                ds.union(u, v)
-                ans += w
-        return ans
+def get_min_cost(edges):
+    edges.sort()
+    ans = 0
+    ds = DisjointSet(n)
+    for u, v, w in edges:
+        if ds.find(u) != ds.find(v):
+            ds.union(u, v)
+            ans += w
+    return ans

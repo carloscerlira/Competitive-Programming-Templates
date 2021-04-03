@@ -13,11 +13,11 @@ class SegmentTree():
         for i in range(n-1, 0, -1): 
             self.tree[i] = self.tree[i << 1] + self.tree[i << 1 | 1]
     
-    def update(self, p, value) : 
+    def update(self, index, val) : 
         n = self.n
-        self.tree[p + n] = value
-        p = p + n;         
-        i = p;
+        self.tree[index + n] = val
+        index = index + n;         
+        i = index;
         
         while i > 1 :
             self.tree[i >> 1] = self.tree[i] + self.tree[i^1]
@@ -26,7 +26,7 @@ class SegmentTree():
     def query(self, l, r):
         n = self.n 
         res = 0
-        l += n; r += n;
+        l += n; r += n+1;
 
         while l < r:
             if (l & 1):
@@ -39,6 +39,8 @@ class SegmentTree():
             
         return res; 
   
-a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]; 
+a = [1, 3, 5]; 
 st = SegmentTree(a)
-print(st.query(0, 3))
+print(st.query(0, 2))
+
+#https://leetcode.com/problems/range-sum-query-mutable/
