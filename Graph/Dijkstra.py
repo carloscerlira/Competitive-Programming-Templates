@@ -2,6 +2,7 @@ from heapq import heappop, heappush
 import math 
 from collections import defaultdict
 
+#O(E+VlogV)
 def solve(adj, s):
     vis = defaultdict(bool)
     dis = defaultdict(lambda : math.inf)
