@@ -2,7 +2,7 @@ from collections import deque
 def solve(adj):
     def bfs(u):
         queue = deque([u])
-        vis = set(); vis.add(u)
+        vis = set([u])
         d = 1
         while queue:
             for i in range(len(queue)):

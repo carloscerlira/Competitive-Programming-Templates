@@ -4,8 +4,8 @@ sys.stdin = open('input.txt', 'r')
 import math 
 from collections import defaultdict, Counter, deque
 from functools import lru_cache
-import heapq
-from itertools import permutations 
+from heapq import heappush, heappop
+from itertools import permutations, combinations
 
 
 def solve():
