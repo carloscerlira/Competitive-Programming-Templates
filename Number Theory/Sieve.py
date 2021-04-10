@@ -8,6 +8,3 @@ def sieve(n):
         p += 1
  
     return prime
-
-
-print(sieve(10))
