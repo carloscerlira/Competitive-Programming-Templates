@@ -1,16 +1,15 @@
 import math
-from collections import deque 
+from collections import deque, defaultdict
 
 #Average O(V)
 #Worst O(VE)
-
 def solve(edges, s):
-    dis = [math.inf for _ in range(n)]
+    dis = defaultdict(lambda : math.inf)
     dis[s] = 0
     
-    adj = collections.defaultdict(list)
-    for u, v, w in times:
-        weight[u].append((v, w))
+    adj = defaultdict(list)
+    for u, v, w in edges:
+        adj[u].append((v, w))
 
     queue = deque([s])
     while queue:
@@ -20,3 +19,5 @@ def solve(edges, s):
                 dis[v] = dis[u] + w
                 queue.append(v)
     return dis
+
+

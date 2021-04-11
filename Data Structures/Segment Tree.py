@@ -1,8 +1,9 @@
+import math
 class SegmentTree():
     def __init__(self, arr):
         n = len(arr)
         self.n = n 
-        self.tree = [0]*(2*n)
+        self.tree = [0]*2*n
         self.build(arr) 
   
     def build(self, arr):
@@ -38,9 +39,26 @@ class SegmentTree():
             l >>= 1; r >>= 1
             
         return res; 
+    
+    def query_min(self, l, r):
+        n = self.n 
+        res = math.inf
+        l += n; r += n+1;
+
+        while l < r:
+            if (l & 1):
+                res = min(res, self.tree[l])
+                l += 1
+            if (r & 1):
+                r -= 1
+                res = min(res, self.tree[r]) 
+            l >>= 1; r >>= 1
+            
+        return res; 
   
 a = [1, 3, 5]; 
 st = SegmentTree(a)
 print(st.query(0, 2))
+print(st.query_min(1, 2))
 
 #https://leetcode.com/problems/range-sum-query-mutable/

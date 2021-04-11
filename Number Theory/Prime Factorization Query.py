@@ -24,4 +24,4 @@ def getFactorization(x):
         x = x // spf[x]
     return ret
   
-pritn(spf)
+print(spf)
