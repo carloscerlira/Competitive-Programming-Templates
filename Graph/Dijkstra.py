@@ -13,9 +13,9 @@ def solve(adj, s):
     while len(pq) != 0:
         d, u = heappop(pq)
         vis[u] = True 
-        for v, cost in adj[u]:
+        for v, w in adj[u]:
             if vis[v]: continue
-            new_dis = dis[u]+cost
+            new_dis = dis[u]+w
             if new_dis < dis[v]:
                 dis[v] = new_dis
                 heappush(pq, (dis[v], v))
