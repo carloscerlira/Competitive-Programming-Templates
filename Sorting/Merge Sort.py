@@ -22,6 +22,5 @@ def solve(A):
         merge(start, mid, end)
         return 
 
-    n = len(A)
     merge_sort(0, n-1)
     return 

@@ -12,6 +12,7 @@ from itertools import permutations, combinations
 def solve():
     return 
 
-arr = list(map(int, stdin.readline().split(" ")))
+line = stdin.readline()
+arr = list(map(int, line.split(" ")))
 print(arr)
 print(solve())
