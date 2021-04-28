@@ -1,6 +1,8 @@
+from collections import defaultdict
+
 class TrieNode:
     def __init__(self):
-        self.children = collections.defaultdict(TrieNode)
+        self.children = defaultdict(TrieNode)
         self.is_word = False
 
 class Trie:
@@ -8,23 +10,23 @@ class Trie:
         self.root = TrieNode()
 
     def insert(self, word):
-        current = self.root
+        curr = self.root
         for letter in word:
-            current = current.children[letter]
-        current.is_word = True
+            curr = curr.children[letter]
+        curr.is_word = True
 
     def search(self, word):
-        current = self.root
+        curr = self.root
         for letter in word:
-            current = current.children.get(letter)
-            if current is None:
+            curr = curr.children.get(letter)
+            if curr is None:
                 return False
-        return current.is_word
+        return curr.is_word
 
     def starts_with(self, prefix):
-        current = self.root
+        curr = self.root
         for letter in prefix:
-            current = current.children.get(letter)
-            if current is None:
+            curr = curr.children.get(letter)
+            if curr is None:
                 return False
         return True

@@ -1,6 +1,6 @@
 import math
 
-#O(sqrt(n))
+#Time O(sqrt(n))
 def primeFactors(n):
     ans = []
     while n % 2 == 0:

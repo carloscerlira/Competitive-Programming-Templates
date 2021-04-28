@@ -1,3 +1,5 @@
+# Time O(nlogn)
+# Space O(n)
 def sieve(n):
     prime = [True for i in range(n+1)]
     p = 2
@@ -7,5 +9,3 @@ def sieve(n):
                 prime[i] = False
         p += 1
     return prime
-
-print(sieve(32))

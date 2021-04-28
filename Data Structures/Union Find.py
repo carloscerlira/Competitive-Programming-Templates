@@ -1,7 +1,8 @@
+from collections import defaultdict
 class DisjointSet:
     def __init__(self, n):
-        self.parent = [i for i in range(n)]
-        self.rank = [1 for _ in range(n)]
+        self.parent = defaultdict(lambda : None)
+        self.rank = defaultdict(lambda : 1)
     
     def union(self, a, b):
         pa = self.find(a)
@@ -15,6 +16,8 @@ class DisjointSet:
             self.rank[pb] += self.rank[pa]
     
     def find(self, a):
+        if a not in parent: 
+            parent[a] = a
         if self.parent[a] == a:
             return a    
         self.parent[a] = self.find(self.parent[a])
