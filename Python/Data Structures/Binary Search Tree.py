@@ -18,12 +18,11 @@ class TreeNode:
         insert(root, x)
         return root
 
-    def search(u):
+    def search(self, u):
         if not u: return None 
         if u.val == val: return u
 
         if u.val < val: return search(u.right)
         else: return search(u.left)
 
-    def search(self, x):
 

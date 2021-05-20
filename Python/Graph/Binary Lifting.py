@@ -1,6 +1,6 @@
 class TreeAncestor:
     step = 16
-    def __init__(self, n: int, A: List[int]):
+    def __init__(self, n: int, A):
         A = dict(enumerate(A))
         jump = [A]
         for s in range(self.step):

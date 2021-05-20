@@ -1,7 +1,7 @@
 import math
-def solve(n, edges)
+def solve(n, edges):
     dis = [[math.inf for _ in range(n)] for _ in range(n)]
-    for u, v, w in times:
+    for u, v, w in edges:
         dis[u][v] = w
 
     for i in range(n):
@@ -12,4 +12,4 @@ def solve(n, edges)
             for j in range(n):
                 dis[i][j] = min(dis[i][j], dis[i][k]+dis[k][j])
     
-    return dis
+    return dis  

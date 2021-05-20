@@ -23,6 +23,7 @@ class DisjointSet:
         self.parent[a] = self.find(self.parent[a])
         return self.parent[a]
 
+#Time O(ElogE)
 def get_min_cost(edges):
     edges.sort()
     ans = 0
