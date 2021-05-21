@@ -12,7 +12,7 @@ class TreeAncestor:
             A = B
         self.jump = jump
 
-    def getKthAncestor(self, node: int, k: int) -> int:
+    def get_ancestor(self, node: int, k: int) -> int:
         step = self.step
         for i in range(step):
             if k & (1 << i):
