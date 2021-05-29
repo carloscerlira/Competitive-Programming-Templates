@@ -10,10 +10,16 @@ import bisect
 from heapq import heapify, heappush, heappop
 from itertools import permutations, combinations
 
-def solve():
+mod = 10**9+7
+inf = math.inf 
+
+def solve(nums):
+    print(nums)
     return 
 
-line = stdin.readline()
-arr = list(map(int, line.split(" ")))
-print(arr)
-print(solve())
+t = int(input())
+for _ in range(t):
+    n = int(input())
+    line = stdin.readline()
+    nums = list(map(int, line.split(" ")))
+    print(solve(nums))

@@ -4,10 +4,10 @@ def gcd(a:int, b:int):
         return a
     return gcd (b, a%b)
 
-def gdc_ext(a:int, b:int): 
+def gcd_ext(a:int, b:int): 
     if b == 0:
         return a, 1, 0
-    g, x1, y1 = gdc_ext(b, a%b)
+    g, x1, y1 = gcd_ext(b, a%b)
     x, y = y1, x1-y1*(a//b)
     return g, x, y 
 

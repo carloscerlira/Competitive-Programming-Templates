@@ -23,15 +23,22 @@
 #include <assert.h>
 using namespace std;
 
+void solve(vector<int> &nums){
+
+}
+
 int main()
 {
-    int n = 10, s = 0;
-    for (int i = 1; i <= n; i++) {
-        s += i;
+    freopen("input.txt", "r", stdin);
+    int t;
+    cin >> t;
+    for (int _ = 0; _ < t; _++){
+        int n;
+        cin >> n;
+        vector<int> nums(n);
+        for (int i = 0; i < n; i++){
+            cin >> nums[i];
+        }
+        solve(nums);
     }
-    int k = log10(n*(n+1)/2);
-    cout << k << endl;
-    cout << s << endl; 
-    cout << "Hello World";      
-    return 0;
 }
