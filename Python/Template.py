@@ -1,5 +1,5 @@
 import sys 
-sys.stdin = open('input.txt', 'r')  
+sys.stdin = open("input.txt", "r")  
 sys.setrecursionlimit(10**6)
 from sys import stdin, stdout
 

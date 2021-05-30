@@ -17,7 +17,7 @@ sieve = get_sieve(n=100)
   
 #Time: O(logn)
 def get_factorization(x):
-    ret = list()
+    ret = []
     while (x != 1):
         ret.append(sieve[x])
         x = x // sieve[x]

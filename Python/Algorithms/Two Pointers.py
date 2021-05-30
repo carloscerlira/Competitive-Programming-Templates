@@ -1,8 +1,7 @@
-def solve(l, r, n, condition):
+def solve(l, r, n, val):
     while r < n:
-        while condition(l, r):
+        if val(l, r):
             r += 1
-        
-        while not condition(l, r):
+        else:
             l += 1
     return 
