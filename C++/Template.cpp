@@ -21,6 +21,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 void solve(vector<int> &nums){
@@ -32,13 +33,15 @@ int main()
     freopen("input.txt", "r", stdin);
     int t;
     cin >> t;
-    for (int _ = 0; _ < t; _++){
+    while (t--) {
         int n;
         cin >> n;
         vector<int> nums(n);
-        for (int i = 0; i < n; i++){
-            cin >> nums[i];
+        for (auto &it : nums){
+            cin >> it;
         }
+        cout << endl;
         solve(nums);
     }
+    return 0;
 }
