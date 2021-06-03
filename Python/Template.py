@@ -27,7 +27,7 @@ def solve(nums):
 t = int(input())
 for _ in range(t):
     line = stdin.readline()
-    n = map(int, line.split(" "))
+    n, = map(int, line.split(" "))
     line = stdin.readline()
     nums = list(map(int, line.split(" ")))
     print(solve(nums)) 
