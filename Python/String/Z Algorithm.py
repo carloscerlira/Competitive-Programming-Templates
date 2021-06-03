@@ -20,12 +20,12 @@ def get_z(s):
     return z 
 
 def search(text, pattern):
-    concat = pattern + text
+    concat = pattern + '#' + text
     n, m = len(concat), len(pattern)
     z = get_z(concat)
     for i in range(m, n):
         if z[i] == m:
-            print("Pattern found at index", i - m)
+            print("Pattern found at index", i-m-1)
   
 text = "GEEKS FOR GEEKS"
 pattern = "GEEK"

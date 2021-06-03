@@ -1,17 +1,24 @@
 import sys 
 sys.stdin = open("input.txt", "r")  
-sys.setrecursionlimit(10**6)
 from sys import stdin, stdout
+sys.setrecursionlimit(10**6)
 
 import math 
+inf, floor, ceil = math.inf, math.floor, math.ceil 
 from collections import defaultdict, Counter, deque
 from functools import lru_cache
-import bisect 
-from heapq import heapify, heappush, heappop
+from bisect import bisect, bisect_left 
+from heapq import heapify, heappush, heappop, heappushpop
 from itertools import permutations, combinations
 
 mod = 10**9+7
-inf = math.inf 
+eps = 1e-5
+
+def print_arr(arr):
+    n = len(arr)
+    for i in range(n-1):
+        stdout.write(str(arr[i])+" ")
+    stdout.write(str(arr[-1])+"\n")
 
 def solve(nums):
     print(nums)
@@ -19,7 +26,8 @@ def solve(nums):
 
 t = int(input())
 for _ in range(t):
-    n = int(input())
+    line = stdin.readline()
+    n = map(int, line.split(" "))
     line = stdin.readline()
     nums = list(map(int, line.split(" ")))
-    print(solve(nums))
+    print(solve(nums)) 

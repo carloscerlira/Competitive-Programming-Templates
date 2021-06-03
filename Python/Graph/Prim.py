@@ -3,10 +3,10 @@ import heapq
 #Time O(ElogV) 
 def get_min_cost(adj):
     n = len(adj)
-    start, ans = 0, 0
+    s, ans = 0, 0
     vis = set()
     heap = []
-    for u, w in adj[start]:
+    for u, w in adj[s]:
         heapq.heappush(heap, (w, u))
 
     while len(vis) < n and heap:

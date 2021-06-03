@@ -10,12 +10,12 @@ def get_f(s):
     return f 
 
 def search(text, pattern):
-    concat = pattern + text
+    concat = pattern + '#' + text
     n, m = len(concat), len(pattern)
     f = get_f(concat)
     for i in range(m, n):
         if f[i] == m:
-            print("Pattern found at index", i-m-m+1)
+            print("Pattern found at index", i-m-m)
   
 text = "GEEKS FOR GEEKS"
 pattern = "GEEK"
