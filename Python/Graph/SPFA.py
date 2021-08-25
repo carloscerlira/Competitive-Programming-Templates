@@ -1,7 +1,7 @@
 import math
 from collections import deque, defaultdict
 
-#Average O(V)
+#Average O(E)
 #Worst O(VE)
 def solve(edges, s):
     dis = defaultdict(lambda : math.inf)
@@ -11,13 +11,19 @@ def solve(edges, s):
     for u, v, w in edges:
         adj[u].append((v, w))
 
-    queue = deque([s])
-    while queue:
-        u = queue.popleft()
+    dq = deque([s])
+    indq = defaultdict(bool)
+    indq[s] = True
+    while dq:
+        u = dq.popleft()
+        indq[u] = False 
         for v, w in adj[u]:
-            if dis[u] + w < dis[v]:
-                dis[v] = dis[u] + w
-                queue.append(v)
+            dv = dis[u]+w
+            if dv < dis[v]:
+                dis[v] = dv
+                if indq[v]: continue 
+                indq[v] = True 
+                dq.append(v)
     return dis
 
 

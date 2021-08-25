@@ -9,7 +9,7 @@ def solve(A):
             if A[j] < piv:
                 A[j], A[i] = A[i], A[j]
                 i += 1
-        A[i-1], A[start] = piv, A[i-1] 
+        A[i-1], A[start] = piv, A[i-1]
         return i-1
 
     def quick_sort(A, start, end):
@@ -21,6 +21,6 @@ def solve(A):
 
     n = len(A)
     quick_sort(A, 0, n-1)
-    return 
+    return
 
 

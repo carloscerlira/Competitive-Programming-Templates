@@ -1,15 +1,17 @@
 import sys 
+sys.setrecursionlimit(10**6)
 sys.stdin = open("input.txt", "r")  
 from sys import stdin, stdout
-sys.setrecursionlimit(10**6)
 
-import math 
-inf, floor, ceil = math.inf, math.floor, math.ceil 
+import math
+inf, floor, ceil = math.inf, math.floor, math.ceil
 from collections import defaultdict, Counter, deque
-from functools import lru_cache
-from bisect import bisect, bisect_left 
+# from sortedcontainers import SortedList
+from functools import lru_cache, reduce
+from bisect import bisect, bisect_left
 from heapq import heapify, heappush, heappop, heappushpop
-from itertools import permutations, combinations
+from itertools import permutations, combinations, product                                                 
+from string import ascii_lowercase as abc 
 
 mod = 10**9+7
 eps = 1e-5
@@ -30,4 +32,4 @@ for _ in range(t):
     n, = map(int, line.split(" "))
     line = stdin.readline()
     nums = list(map(int, line.split(" ")))
-    print(solve(nums)) 
+    print(solve(nums))

@@ -2,21 +2,17 @@ from heapq import heappop, heappush
 import math 
 from collections import defaultdict
 
-#O(E+VlogV)
+#O(ElogV)
 def solve(adj, s):
-    # vis = defaultdict(bool)
     dis = defaultdict(lambda : math.inf)
-    pq = []
-    
     dis[s] = 0
-    heappush(pq, (dis[s], s))
-    while len(pq) != 0:
-        d, u = heappop(pq)
-        # vis[u] = True 
+    pq = [(dis[s], s)]
+    while pq:
+        du, u = heappop(pq)
+        if du != dis[u]: continue
         for v, w in adj[u]:
-            # if vis[v]: continue
-            new_dis = dis[u]+w
-            if new_dis < dis[v]:
-                dis[v] = new_dis
+            dv = du+w
+            if dv < dis[v]:
+                dis[v] = dv
                 heappush(pq, (dis[v], v))
     return dis

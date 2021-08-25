@@ -5,5 +5,3 @@ def bin_exp(a:int, b:int) -> int:
         a = a*a 
         b = b//2
     return ans 
-
-print(bin_exp(5, 8))

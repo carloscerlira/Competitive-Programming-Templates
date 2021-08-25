@@ -6,8 +6,7 @@ def solve(n, s, edges):
     dis[s] = 0
     for _ in range(n):
         for u, v, w in edges:
-            if dis[u] + w < dis[v]:
-                dis[v] = dis[u] + w
+            dis[v] = min(dis[v], dis[u] + w)
 
     return dis
 

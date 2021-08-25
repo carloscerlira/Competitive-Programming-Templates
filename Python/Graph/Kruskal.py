@@ -18,7 +18,7 @@ class DisjointSet:
     def find(self, a):
         if a not in self.parent: 
             self.parent[a] = a
-        if self.parent[a] == a:
+        if self.parent[a] == a: 
             return a    
         self.parent[a] = self.find(self.parent[a])
         return self.parent[a]
@@ -27,7 +27,7 @@ class DisjointSet:
 def get_min_cost(edges):
     edges.sort()
     ans = 0
-    ds = DisjointSet()
+    ds = DisjointSet() 
     for w, u, v in edges:
         if ds.find(u) != ds.find(v):
             ds.union(u, v)
