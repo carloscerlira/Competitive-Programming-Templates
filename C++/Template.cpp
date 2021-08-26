@@ -8,7 +8,7 @@ using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statisti
 
 #define FOR(i, a, b)                for (int i = (a); i < (b); i++)
 #define rFOR(i, a, b)               for (int i = (a); i > (b); i--)
-#define debug(x)                    cerr << #x << " = "; _debug(x); cerr << endl;
+#define debug(x)                    cout << #x << " = "; _debug(x); cout << endl;
 #define pb                          push_back
 #define mp                          make_pair
 #define F                           first
@@ -29,48 +29,49 @@ vector<pii> dirs = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 template <typename T>
 void _debug(vector<T>& vec){
     int n = sz(vec);
-    cerr << "[";
+    cout << "[";
     FOR(i, 0, n-1){
-        cerr << vec[i] << " ";
+        cout << vec[i] << " ";
     }
-    cerr << vec[n-1] << "]";
+    cout << vec[n-1] << "]";
 }
 
 void _debug(vector<string>& vec){
     int n = sz(vec);
-    cerr << endl;
+    cout << endl;
     FOR(i, 0, n){
-        cerr << vec[i] << endl;
+        cout << vec[i] << endl;
     }
 }
 
 template <typename T>
 void _debug(vector<vector<T>>& A){
-    int n, m;
-    n = sz(A); m = sz(A[0]);
-    cerr << endl;
+    int n;
+    n = sz(A);
+    cout << endl;
     FOR(i, 0, n){
         _debug(A[i]);
-        cerr << endl;
+        cout << endl;
     }
+}
+
+template <typename T>
+void _debug(pair<T, T>& pair){
+    cout << pair.F << "," << pair.S; 
 }
 
 template <typename T>
 void _debug(T& x){
-    cerr << x;
-}
-
-void _debug(pii& pair){
-    cerr << pair.F << "," << pair.S; 
+    cout << x;
 }
 
 template <typename T>
-void print(vector<T>& arr, int a=0, int b=-1){
-    if(b==-1){b = sz(arr);}
+void print(vector<T>& vec, int a=0, int b=-1){
+    if(b==-1){b = sz(vec);}
     for (int i = a; i < b-1; i++) {
-        cout << arr[i] << " ";
+        cout << vec[i] << " ";
     }
-    cout << arr[b-1] << endl;
+    cout << vec[b-1] << endl;
     return; 
 }
 
@@ -87,6 +88,7 @@ void solve(){
     FOR(i, 0, n){
         cin >> nums[i];
     }
+    debug(nums);
     return;
 }
 
