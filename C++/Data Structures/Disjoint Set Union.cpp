@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define print(x) cout << x << endl;
 
 const int N = 1e5+1;
 vector<int> parent(N), rnk(N);

@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define print(x) cout << x << endl;
 
-vector<vector<int>> adj; // graph represented as an adjacency list
-int n; // number of vertices
-vector<bool> vis;
+
+const int N = 1e5+1;
+vector<vector<int>> adj(N); 
+vector<bool> vis(N);
 
 void dfs(int v){
     vis[v] = true;

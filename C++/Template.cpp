@@ -8,7 +8,14 @@ using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statisti
 
 #define FOR(i, a, b)                for (int i = (a); i < (b); i++)
 #define rFOR(i, a, b)               for (int i = (a); i > (b); i--)
+#define TR(v, arr)                  for (auto& v : arr)
 #define debug(x)                    cout << #x << " = "; _debug(x); cout << endl;
+#define si(x)	                    scanf("%d",&x)
+#define sl(x)	                    scanf("%lld",&x)
+#define ss(s)	                    scanf("%s",s)
+#define pi(x)	                    printf("%d\n",x)
+#define pl(x)	                    printf("%lld\n",x)
+#define ps(s)	                    printf("%s\n",s)
 #define pb                          push_back
 #define mp                          make_pair
 #define F                           first
@@ -21,10 +28,15 @@ typedef long long ll;
 typedef vector<int> vi;
 typedef vector<ll> vll;
 typedef pair<int, int> pii;
+typedef pair<ll, ll> pll;
 
 const ll MOD = 1e9 + 7;
 const ll INF = 1e9;
-vector<pii> dirs = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+
+template <typename T>
+void _debug(pair<T, T>& pair){
+    cout << "{" << pair.F << "," << pair.S << "}";  
+}
 
 template <typename T>
 void _debug(vector<T>& vec){
@@ -45,6 +57,16 @@ void _debug(vector<string>& vec){
 }
 
 template <typename T>
+void _debug(vector<pair<T, T>>& vec){
+    int n = sz(vec);
+    FOR(i, 0, n-1){
+        _debug(vec[i]);
+        cout << ", ";
+    }
+    _debug(vec[n-1]);
+}
+
+template <typename T>
 void _debug(vector<vector<T>>& A){
     int n;
     n = sz(A);
@@ -53,11 +75,6 @@ void _debug(vector<vector<T>>& A){
         _debug(A[i]);
         cout << endl;
     }
-}
-
-template <typename T>
-void _debug(pair<T, T>& pair){
-    cout << pair.F << "," << pair.S; 
 }
 
 template <typename T>
@@ -83,10 +100,10 @@ void print(T& x){
 
 void solve(){
     int n;
-    cin >> n;
+    si(n);
     vi nums(n);
     FOR(i, 0, n){
-        cin >> nums[i];
+        si(nums[i]);
     }
     debug(nums);
     return;

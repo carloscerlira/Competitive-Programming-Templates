@@ -6,6 +6,7 @@ typedef long long ll;
 typedef vector<int> vi;
 typedef vector<ll> vll;
 typedef pair<int, int> pii;
+
 template <typename T>
 void print(T& x){
     cout << x << endl;
