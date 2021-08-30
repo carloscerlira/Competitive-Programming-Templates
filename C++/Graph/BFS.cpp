@@ -1,11 +1,8 @@
-#include <bits/stdc++.h>
-using namespace std;
-#define print(x) cout << x << endl;
+#include "Header.cpp"
 
 int main(){
-    vector<vector<int>> adj;  // adjacency list representation
-    int n; // number of nodes
-    int s; // source vertex
+    vector<vector<int>> adj; 
+    int n; int s; 
 
     queue<int> q;
     vector<bool> used(n);

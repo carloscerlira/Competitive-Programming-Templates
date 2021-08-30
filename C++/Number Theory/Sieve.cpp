@@ -1,15 +1,20 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void main(){
-    int n;
-    vector<bool> is_prime(n+1, true);
-    is_prime[0] = is_prime[1] = false;
+const int N = 1e6+1;
+vector<bool> is_prime(N, true);
 
-    for (int i = 2; i * i <= n; i++) {
+void sieve(){
+    is_prime[0] = is_prime[1] = false;
+    for (int i = 2; i * i <= N; i++) {
         if (is_prime[i]) {
-            for (int j = i * i; j <= n; j += i)
+            for (int j = i * i; j <= N; j += i)
                 is_prime[j] = false;
         }
     }
+    return;
+}
+
+void main(){
+    return;
 }

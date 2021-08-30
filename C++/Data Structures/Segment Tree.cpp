@@ -1,12 +1,4 @@
-#include <bits/stdc++.h>
-using namespace std;
- 
-typedef long long ll;
-typedef vector<int> vi;
-typedef vector<ll> vll;
-typedef pair<int, int> pii;
-
-const int INF = 1e9;
+#include "Header.cpp"
 
 struct SegmentTree {
     vll t;
@@ -16,13 +8,13 @@ struct SegmentTree {
         return;
     }
  
-    ll f(int a, int b){
-        return min(a, b);
+    ll f(ll a, ll b){
+        return a+b;
     }
  
-    void build(vi& a, int v, int tl, int tr){
-        if (tl == tr) {t[v] = a[tl];} 
-        else {
+    void build(vll& a, int v, int tl, int tr){
+        if(tl == tr){t[v] = a[tl];} 
+        else{
             int tm = tl+(tr-tl)/2;
             build(a, v*2, tl, tm);
             build(a, v*2+1, tm+1, tr);
@@ -31,14 +23,14 @@ struct SegmentTree {
     }
  
     ll query(int v, int tl, int tr, int l, int r) {
-        if (l > r){return INF;}
-        if (l == tl && r == tr){return t[v];}
+        if(l > r){return 0;}
+        if(l == tl && r == tr){return t[v];}
         int tm = tl+(tr-tl)/2;
         return f(query(v*2, tl, tm, l, min(r, tm)), query(v*2+1, tm+1, tr, max(l, tm+1), r));
     }
  
     void update(int v, int tl, int tr, int pos, int new_val) {
-        if (tl == tr) {t[v] = new_val;} 
+        if (tl == tr){t[v] = new_val;} 
         else {
             int tm = tl+(tr-tl)/2;
             if (pos <= tm){

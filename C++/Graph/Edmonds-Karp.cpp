@@ -1,7 +1,4 @@
-#include <bits/stdc++.h>
-using namespace std;
-#define ll long long
-const ll INF = 1e9;
+#include "Header.cpp"
 
 int n;
 vector<vector<int>> capacity;

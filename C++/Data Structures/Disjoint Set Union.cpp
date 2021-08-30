@@ -1,5 +1,4 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include "Header.cpp"
 
 const int N = 1e5+1;
 vector<int> parent(N), rnk(N);

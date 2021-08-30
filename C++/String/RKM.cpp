@@ -14,6 +14,7 @@ vector<int> rabin_karp(string const& s, string const& t) {
     vector<long long> h(T + 1, 0); 
     for (int i = 0; i < T; i++)
         h[i+1] = (h[i] + (t[i] - 'a' + 1) * p_pow[i]) % m; 
+    
     long long h_s = 0; 
     for (int i = 0; i < S; i++) 
         h_s = (h_s + (s[i] - 'a' + 1) * p_pow[i]) % m; 

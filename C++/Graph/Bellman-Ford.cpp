@@ -1,7 +1,4 @@
-#include <bits/stdc++.h>
-using namespace std;
-#define print(x) cout << x << endl;
-const int INF = 1e9;
+#include "Header.cpp"
 
 struct edge
 {

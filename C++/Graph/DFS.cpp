@@ -1,6 +1,4 @@
-#include <bits/stdc++.h>
-using namespace std;
-
+#include "Header.cpp"
 
 const int N = 1e5+1;
 vector<vector<int>> adj(N); 

@@ -1,40 +1,25 @@
-#include <bits/stdc++.h>
-using namespace std;
+#include "Header.cpp"
 
-#define F                           first
-#define S                           second
-typedef long long ll;
-typedef vector<int> vi;
-typedef vector<ll> vll;
-typedef pair<int, int> pii;
+const int N = 1e5+1;
+vector<vector<pii>> adj(N);
 
-const int INF = 1e9;
-vector<vector<pii>> adj;
-
-void dijkstra(int s, vi& d, vi& p) {
-    int n = adj.size();
+void dijkstra(int n, int s, vector<ll>& d, vector<vector<pii>>& adj) {
     d.assign(n, INF);
-    p.assign(n, -1);
-
+    priority_queue<pair<ll, int>, vector<pair<ll, int>>, greater<pair<long, int>>> q;
     d[s] = 0;
-    using pii = pair<int, int>;
-    priority_queue<pii, vector<pii>, greater<pii>> q;
-    q.push({0, s});
+    q.push({d[s], s});
     while (!q.empty()) {
-        int v = q.top().S;
-        int dv = q.top().F;
+        ll du = q.top().F;
+        int u = q.top().S;
         q.pop();
-        if (dv != d[v])
-            continue;
-
-        for (auto edge : adj[v]) {
-            int to = edge.F;
-            int len = edge.S;
-
-            if (d[v] + len < d[to]) {
-                d[to] = d[v] + len;
-                p[to] = v;
-                q.push({d[to], to});
+        if (du != d[u]){continue;}
+        
+        TR(edge, adj[u]){
+            int v = edge.F;
+            int w = edge.S;
+            if (d[u] + w < d[v]) {
+                d[v] = d[u] + w;
+                q.push({d[v], v});
             }
         }
     }
