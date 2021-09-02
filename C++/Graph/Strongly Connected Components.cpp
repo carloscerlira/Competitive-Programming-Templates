@@ -6,9 +6,12 @@ using namespace __gnu_pbds;
 template <typename T>
 using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
+#define endl                        '\n'
+#define fastIO()                    cin.tie(0); cout.tie(0);
+#define FO(i, b)                    for (int i = 0; i < (b); i++)
 #define FOR(i, a, b)                for (int i = (a); i < (b); i++)
 #define rFOR(i, a, b)               for (int i = (a); i > (b); i--)
-#define TR(v, arr)                  for (auto& v : arr)
+#define TR(v, arr)                  for (auto& (v) : (arr))
 #define debug(x)                    cout << #x << " = "; _debug(x); cout << endl;
 #define si(x)	                    scanf("%d",&x)
 #define sl(x)	                    scanf("%lld",&x)
@@ -20,10 +23,10 @@ using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statisti
 #define mp                          make_pair
 #define F                           first
 #define S                           second
+#define all(x)                      x.begin(), x.end() 
+#define sz(x)                       (int) x.size()
 #define LB(arr, x)                  lower_bound(all(arr), x)-(arr).begin()
 #define UB(arr, x)                  upper_bound(all(arr), x)-(arr).begin()
-#define sz(x)                       (int) x.size()
-#define all(x)                      x.begin(), x.end() 
 typedef long long ll;
 typedef vector<int> vi;
 typedef vector<ll> vll;
@@ -33,67 +36,33 @@ typedef pair<ll, ll> pll;
 const ll MOD = 1e9 + 7;
 const ll INF = 1e9;
 
-template <typename T>
-void _debug(pair<T, T>& pair){
-    cout << "{" << pair.F << "," << pair.S << "}";  
-}
+const int N = 1e5+1;
+vector<vi> adj(N);
+vector<bool> on_stack(N, false);
+vi idx(N, -1);
+vi low(N, -1);
+deque<int> dq;
+int components, cnt = 0;
 
-template <typename T>
-void _debug(vector<T>& vec){
-    int n = sz(vec);
-    cout << "[";
-    FOR(i, 0, n-1){
-        cout << vec[i] << " ";
+void dfs(int u){
+    dq.pb(u);
+    on_stack[u] = true;
+    idx[u] = low[u] = cnt;
+    cnt += 1;
+
+    TR(v, adj[u]){
+        if(idx[v] == -1){dfs(v);}
+        if(on_stack[v]){low[u] = min(low[u], low[v]);}
     }
-    cout << vec[n-1] << "]";
-}
 
-void _debug(vector<string>& vec){
-    int n = sz(vec);
-    cout << endl;
-    FOR(i, 0, n){
-        cout << vec[i] << endl;
+    if(idx[u] == low[u]){
+        while(!dq.empty()){
+            int v = dq.back();
+            dq.pop_back();
+            on_stack[v] = false;
+            low[v] = low[u];
+            if(v == u){break;}
+        }
+        components += 1;
     }
-}
-
-template <typename T>
-void _debug(vector<pair<T, T>>& vec){
-    int n = sz(vec);
-    FOR(i, 0, n-1){
-        _debug(vec[i]);
-        cout << ", ";
-    }
-    _debug(vec[n-1]);
-}
-
-template <typename T>
-void _debug(vector<vector<T>>& A){
-    int n;
-    n = sz(A);
-    cout << endl;
-    FOR(i, 0, n){
-        _debug(A[i]);
-        cout << endl;
-    }
-}
-
-template <typename T>
-void _debug(T& x){
-    cout << x;
-}
-
-template <typename T>
-void print(vector<T>& vec, int a=0, int b=-1){
-    if(b==-1){b = sz(vec);}
-    for (int i = a; i < b-1; i++) {
-        cout << vec[i] << " ";
-    }
-    cout << vec[b-1] << endl;
-    return; 
-}
-
-template <typename T>
-void print(T& x){
-    cout << x << endl;
-    return;
 }

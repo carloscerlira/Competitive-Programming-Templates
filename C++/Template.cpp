@@ -7,7 +7,7 @@ template <typename T>
 using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 #define endl                        '\n'
-#define fastIO()                    ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define fastIO()                    cin.tie(0); cout.tie(0);
 #define FO(i, b)                    for (int i = 0; i < (b); i++)
 #define FOR(i, a, b)                for (int i = (a); i < (b); i++)
 #define rFOR(i, a, b)               for (int i = (a); i > (b); i--)
@@ -63,6 +63,7 @@ void _debug(vector<string>& vec){
 template <typename T>
 void _debug(vector<pair<T, T>>& vec){
     int n = sz(vec);
+    if(n == 0){return;}
     FO(i, n-1){
         _debug(vec[i]);
         cout << ", ";
@@ -87,8 +88,9 @@ void _debug(T& x){
 
 template <typename T>
 void print(vector<T>& vec, int a=0, int b=-1){
-    if(b==-1){b = sz(vec);}
-    FOR(i, a, b){
+    if(b == -1){b = sz(vec);}
+    if(b == 0){return;}
+    FOR(i, a, b-1){
         cout << vec[i] << " ";
     }
     cout << vec[b-1] << endl;
@@ -110,19 +112,18 @@ void solve(){
     debug(nums);
     return;
 }
-
 int main()
 {
-    fastIO();
     #ifdef ONLINE_JUDGE
+        fastIO();
     #else
         string file = __FILE__;
         file = string(file.begin(), file.end()-3)+"txt";
         freopen(file.c_str(), "r", stdin);
     #endif
-    int t=1;
-    // si(t);
-    while (t--) {
+    int T=1; 
+    // si(T);
+    FO(tc, T) {
         solve();
     }
     return 0;
