@@ -34,6 +34,15 @@ typedef pair<ll, ll> pll;
 const ll MOD = 1e9 + 7;
 const ll INF = 1e9;
 
+void setIO(){
+	string file = __FILE__;
+	file = string(file.begin(), file.end()-3);
+	string in_file = file+"in";
+	string out_file = file+"out";
+	freopen(in_file.c_str(), "r", stdin);
+	freopen(out_file.c_str(), "w", stdout);
+}
+
 template <typename T>
 void _debug(T& x){
 	cout << x;
@@ -98,22 +107,14 @@ void solve(){
     debug(nums);
     return;
 }
+
 int main()
 {
-    #ifdef ONLINE_JUDGE
-        fastIO();
-    #else
-        string file = __FILE__;
-        file = string(file.begin(), file.end()-3);
-        string in_file = file+"in";
-        string out_file = file+"out";
-        freopen(in_file.c_str(), "r", stdin);
-        freopen(out_file.c_str(), "w", stdout);
-    #endif
-    int T=1; 
-    // si(T);
+	fastIO();
+	if(getenv("LOCAL")){setIO();}
+	int T=1;
     FO(tc, T) {
         solve();
-    }
+    }	
     return 0;
 }
