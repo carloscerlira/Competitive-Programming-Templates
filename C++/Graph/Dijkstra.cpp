@@ -41,7 +41,7 @@ vector<vector<pii>> adj(N);
 
 void dijkstra(int n, int s, vector<ll>& d, vector<vector<pii>>& adj) {
     d.assign(n, INF);
-    priority_queue<pair<ll, int>, vector<pair<ll, int>>, greater<pair<long, int>>> q;
+    priority_queue<pair<ll, int>, vector<pair<ll, int>>, greater<pair<ll, int>>> q;
     d[s] = 0;
     q.push({d[s], s});
     while (!q.empty()) {

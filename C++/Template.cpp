@@ -15,10 +15,8 @@ using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statisti
 #define debug(x)                    cout << #x << " = "; _debug(x); cout << endl;
 #define si(x)	                    scanf("%d",&x)
 #define sl(x)	                    scanf("%lld",&x)
-#define ss(s)	                    scanf("%s",s)
 #define pi(x)	                    printf("%d\n",x)
 #define pl(x)	                    printf("%lld\n",x)
-#define ps(s)	                    printf("%s\n",s)
 #define pb                          push_back
 #define mp                          make_pair
 #define F                           first
@@ -37,70 +35,58 @@ const ll MOD = 1e9 + 7;
 const ll INF = 1e9;
 
 template <typename T>
-void _debug(pair<T, T>& pair){
-    cout << "{" << pair.F << "," << pair.S << "}";  
+void _debug(T& x){
+	cout << x;
+}
+
+template <typename T1, typename T2>
+void _debug(pair<T1, T2>& pair){
+	cout << "{"; _debug(pair.F); cout << ","; _debug(pair.S); cout << "}";  
 }
 
 template <typename T>
 void _debug(vector<T>& vec){
-    int n = sz(vec);
-    if(n == 0){cout << "[ ]"; return;}
-    cout << "[";
-    FO(i, n-1){
-        cout << vec[i] << " ";
-    }
-    cout << vec[n-1] << "]";
+	int n = sz(vec);
+	if(n == 0){cout << "[ ]"; return;}
+	cout << "[";
+	FO(i, n-1){
+		_debug(vec[i]); cout << " ";
+	}
+	_debug(vec[n-1]); cout << "]";
 }
 
 void _debug(vector<string>& vec){
-    int n = sz(vec);
-    cout << endl;
-    FO(i, n){
-        cout << vec[i] << endl;
-    }
-}
-
-template <typename T>
-void _debug(vector<pair<T, T>>& vec){
-    int n = sz(vec);
-    if(n == 0){return;}
-    FO(i, n-1){
-        _debug(vec[i]);
-        cout << ", ";
-    }
-    _debug(vec[n-1]);
+	int n = sz(vec);
+	cout << endl;
+	FO(i, n){
+		cout << vec[i] << endl;
+	}
 }
 
 template <typename T>
 void _debug(vector<vector<T>>& A){
-    int n = sz(A);
-    cout << endl;
-    FO(i, n){
-        _debug(A[i]);
-        cout << endl;
-    }
-}
-
-template <typename T>
-void _debug(T& x){
-    cout << x;
-}
-
-template <typename T>
-void print(vector<T>& vec, int a=0, int b=-1){
-    if(b == -1){b = sz(vec);}
-    if(b == 0){return;}
-    FOR(i, a, b-1){
-        cout << vec[i] << " ";
-    }
-    cout << vec[b-1] << endl;
-    return; 
+	int n = sz(A);
+	cout << endl;
+	FO(i, n){
+		_debug(A[i]); cout << endl;
+	}
 }
 
 template <typename T>
 void print(T& x){
-    cout << x << endl;
-    return;
+	cout << x << endl;
+	return;
+}
+
+template <typename T>
+void print(vector<T>& vec, int a=0, int b=-1){
+	if(b == -1){b = sz(vec);}
+	if(b == 0){return;}
+	FOR(i, a, b-1){
+		cout << vec[i] << " ";
+	}
+	cout << vec[b-1] << endl;
+	return; 
 }
 
 void solve(){
@@ -118,8 +104,11 @@ int main()
         fastIO();
     #else
         string file = __FILE__;
-        file = string(file.begin(), file.end()-3)+"txt";
-        freopen(file.c_str(), "r", stdin);
+        file = string(file.begin(), file.end()-3);
+        string in_file = file+"in";
+        string out_file = file+"out";
+        freopen(in_file.c_str(), "r", stdin);
+        freopen(out_file.c_str(), "w", stdout);
     #endif
     int T=1; 
     // si(T);
