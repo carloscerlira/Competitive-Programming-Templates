@@ -35,25 +35,26 @@ typedef pair<ll, ll> pll;
 
 const ll MOD = 1e9 + 7;
 const ll INF = 1e9;
-
 const int N = 1e5+1;
-vector<int> par(N), rnk(N);
 
-void make_set(int v) {
-    par[v] = v;
-    rnk[v] = 1;
+vll BIT(4*N, 0);
+
+int lsb(int pos) {
+    return pos & -pos;
 }
 
-int find_set(int v) {
-    if (v == par[v]){return v;}
-    return par[v] = find_set(par[v]);
+void update(int pos, int val){
+    while (pos <= N){
+        BIT[pos] += val;
+        pos += lsb(pos);
+    }
 }
 
-void union_sets(int a, int b) {
-    a = find_set(a);
-    b = find_set(b);
-    if (a==b){return;}
-    if (rnk[a] < rnk[b]){swap(a, b);}
-    par[b] = a;
-    rnk[a] += rnk[b];
+int query(int pos){
+   int sum = 0;
+   while (pos > 0){
+      sum += BIT[pos];
+      pos -= lsb(pos);
+   }
+   return sum;
 }

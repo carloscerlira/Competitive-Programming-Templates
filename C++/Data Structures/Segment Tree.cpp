@@ -36,19 +36,20 @@ typedef pair<ll, ll> pll;
 const ll MOD = 1e9 + 7;
 const ll INF = 1e9;
 
-struct SegmentTree {
-    vll t;
+template<typename T>
+struct SegmentTree{
+    vector<T> t;
     
     SegmentTree(int n){
         t.assign(4*n, 0);
         return;
     }
  
-    ll f(ll a, ll b){
+    T f(T a, T b){
         return a+b;
     }
  
-    void build(vll& a, int v, int tl, int tr){
+    void build(vector<T>& a, int v, int tl, int tr){
         if(tl == tr){t[v] = a[tl];} 
         else{
             int tm = tl+(tr-tl)/2;
@@ -58,7 +59,7 @@ struct SegmentTree {
         }
     }
  
-    ll query(int v, int tl, int tr, int l, int r) {
+    T query(int v, int tl, int tr, int l, int r) {
         if(l > r){return 0;}
         if(l == tl && r == tr){return t[v];}
         int tm = tl+(tr-tl)/2;
@@ -100,7 +101,6 @@ struct SegmentTree {
         if(rs != -1) return rs;
         return get_first(2*v+1, mid+1, rv, l ,r, x);
     }
-
 };
 
 struct RangeUpdate {
