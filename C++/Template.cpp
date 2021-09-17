@@ -1,13 +1,13 @@
 #include <bits/stdc++.h>
-#include <ext/pb_ds/assoc_container.hpp>
-#include <ext/pb_ds/tree_policy.hpp>
+// #include <ext/pb_ds/assoc_container.hpp>
+// #include <ext/pb_ds/tree_policy.hpp>
 using namespace std;
-using namespace __gnu_pbds;
-template <typename T>
-using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+// using namespace __gnu_pbds;
+// template <typename T>
+// using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 #define endl                        '\n'
-#define fastIO()                    cin.tie(0); cout.tie(0);
+#define fastIO()                    ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 #define FO(i, b)                    for (int i = 0; i < (b); i++)
 #define FOR(i, a, b)                for (int i = (a); i < (b); i++)
 #define rFOR(i, a, b)               for (int i = (a); i > (b); i--)
@@ -99,13 +99,11 @@ void print(vector<T>& vec, int a=0, int b=-1){
 }
 
 void solve(){
-    int n; si(n);
-    vi nums(n);
-    FO(i, n){
-        si(nums[i]);
-    }
-    debug(nums);
-    return;
+	int n; si(n);
+	vi nums(n);
+	FO(i, n) si(nums[i]);
+	debug(nums);
+	return;
 }
 
 int main()
@@ -113,8 +111,8 @@ int main()
 	fastIO();
 	if(getenv("LOCAL")){setIO();}
 	int T=1;
-    FO(tc, T) {
-        solve();
-    }	
-    return 0;
+	FO(tc, T){
+		solve();
+	}	
+	return 0;
 }

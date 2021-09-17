@@ -36,6 +36,10 @@ typedef pair<ll, ll> pll;
 const ll MOD = 1e9 + 7;
 const ll INF = 1e9;
 
+int gcd (int a, int b) {
+    return b ? gcd (b, a % b) : a;
+}
+
 void subsets(){
     int n;
     FOR(i, 1, pow(2, n)){

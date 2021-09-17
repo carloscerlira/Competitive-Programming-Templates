@@ -2,6 +2,6 @@
     "files.associations": {
         "*.rmd": "markdown",
         "iostream": "cpp",
-        "vector": "cpp"
+        "type_traits": "cpp"
     }
 }
