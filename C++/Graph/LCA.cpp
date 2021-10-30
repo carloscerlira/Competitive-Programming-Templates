@@ -40,9 +40,7 @@ void dfs(int u, int p){
 }
 
 int get_lca(int a, int b){
-    if (depth[a] < depth[b]){
-        swap(a, b);
-    }
+    if (depth[a] < depth[b]){swap(a, b);}
 
     int k = depth[a]-depth[b];
     FOR(i, 0, LOG){
@@ -50,6 +48,7 @@ int get_lca(int a, int b){
             a = up[a][i];
         }
     }
+
     if (a == b){return a;}
     rFOR(j, LOG-1, -1){
         if(up[a][j] != up[b][j]){

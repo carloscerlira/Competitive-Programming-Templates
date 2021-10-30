@@ -68,7 +68,7 @@ struct SegmentTree{
  
     void update(int v, int tl, int tr, int pos, int new_val) {
         if (tl == tr){t[v] = new_val;} 
-        else {
+        else{
             int tm = tl+(tr-tl)/2;
             if (pos <= tm){
                 update(v*2, tl, tm, pos, new_val);
@@ -78,28 +78,6 @@ struct SegmentTree{
             }
             t[v] = f(t[v*2], t[v*2+1]);
         }
-    }
-
-    int get_first(int v, int lv, int rv, int l, int r, int x) {
-        if(lv > r || rv < l) return -1;
-        if(l <= lv && rv <= r) {
-            if(t[v] <= x) return -1;
-            while(lv != rv) {
-                int mid = lv + (rv-lv)/2;
-                if(t[2*v] > x) {
-                    v = 2*v;
-                    rv = mid;
-                }else {
-                    v = 2*v+1;
-                    lv = mid+1;
-                }
-            }
-            return lv;
-        }
-        int mid = lv + (rv-lv)/2;
-        int rs = get_first(2*v, lv, mid, l, r, x);
-        if(rs != -1) return rs;
-        return get_first(2*v+1, mid+1, rv, l ,r, x);
     }
 };
 

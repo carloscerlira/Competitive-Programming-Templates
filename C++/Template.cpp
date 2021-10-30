@@ -1,22 +1,18 @@
 #include <bits/stdc++.h>
+using namespace std;
 // #include <ext/pb_ds/assoc_container.hpp>
 // #include <ext/pb_ds/tree_policy.hpp>
-using namespace std;
 // using namespace __gnu_pbds;
 // template <typename T>
 // using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 #define endl                        '\n'
-#define fastIO()                    ios::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define fastIO()                    ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
 #define FO(i, b)                    for (int i = 0; i < (b); i++)
 #define FOR(i, a, b)                for (int i = (a); i < (b); i++)
 #define rFOR(i, a, b)               for (int i = (a); i > (b); i--)
 #define TR(v, arr)                  for (auto& (v) : (arr))
 #define debug(x)                    cout << #x << " = "; _debug(x); cout << endl;
-#define si(x)	                    scanf("%d",&x)
-#define sl(x)	                    scanf("%lld",&x)
-#define pi(x)	                    printf("%d\n",x)
-#define pl(x)	                    printf("%lld\n",x)
 #define pb                          push_back
 #define mp                          make_pair
 #define F                           first
@@ -98,10 +94,12 @@ void print(vector<T>& vec, int a=0, int b=-1){
 	return; 
 }
 
+const int N = 1e5;
+
 void solve(){
-	int n; si(n);
+	int n; cin >> n;
 	vi nums(n);
-	FO(i, n) si(nums[i]);
+	FO(i, n) cin >> nums[i];
 	debug(nums);
 	return;
 }
@@ -112,6 +110,7 @@ int main()
 	if(getenv("LOCAL")){setIO();}
 	int T=1;
 	FO(tc, T){
+		// cout << "Case #" << tc << ":";
 		solve();
 	}	
 	return 0;

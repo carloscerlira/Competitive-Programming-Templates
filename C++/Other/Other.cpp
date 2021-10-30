@@ -13,12 +13,6 @@ using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statisti
 #define rFOR(i, a, b)               for (int i = (a); i > (b); i--)
 #define TR(v, arr)                  for (auto& (v) : (arr))
 #define debug(x)                    cout << #x << " = "; _debug(x); cout << endl;
-#define si(x)	                    scanf("%d",&x)
-#define sl(x)	                    scanf("%lld",&x)
-#define ss(s)	                    scanf("%s",s)
-#define pi(x)	                    printf("%d\n",x)
-#define pl(x)	                    printf("%lld\n",x)
-#define ps(s)	                    printf("%s\n",s)
 #define pb                          push_back
 #define mp                          make_pair
 #define F                           first
