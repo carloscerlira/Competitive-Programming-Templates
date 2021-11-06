@@ -35,6 +35,14 @@ void setIO(){
 	file = string(file.begin(), file.end()-3);
 	string in_file = file+"in";
 	string out_file = file+"out";
+
+	FILE *create_in_file;
+    create_in_file = freopen(in_file.c_str(), "r", stdin);
+    if(!create_in_file){
+        create_in_file = freopen(in_file.c_str(), "w", stdout);
+        fclose(create_in_file);
+    }
+
 	freopen(in_file.c_str(), "r", stdin);
 	freopen(out_file.c_str(), "w", stdout);
 }

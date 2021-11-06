@@ -1,10 +1,5 @@
 #include <bits/stdc++.h>
-#include <ext/pb_ds/assoc_container.hpp>
-#include <ext/pb_ds/tree_policy.hpp>
 using namespace std;
-using namespace __gnu_pbds;
-template <typename T>
-using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 #define endl                        '\n'
 #define fastIO()                    cin.tie(0); cout.tie(0);
@@ -30,11 +25,11 @@ typedef pair<ll, ll> pll;
 const ll MOD = 1e9 + 7;
 const ll INF = 1e9;
 
-int gcd (int a, int b) {
-    return b ? gcd (b, a % b) : a;
+int get_gcd (int a, int b) {
+    return b ? get_gcd (b, a % b) : a;
 }
 
-void subsets(){
+void gen_subsets(){
     int n;
     FOR(i, 1, pow(2, n)){
         vi s;
@@ -47,7 +42,7 @@ void subsets(){
     return;
 }
 
-void permutations(){
+void gen_permutations(){
     vi vec;
     sort(all(vec));
     do{
