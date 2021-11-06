@@ -36,11 +36,11 @@ void setIO(){
 	string in_file = file+"in";
 	string out_file = file+"out";
 
-	FILE *create_in_file;
-    create_in_file = freopen(in_file.c_str(), "r", stdin);
-    if(!create_in_file){
-        create_in_file = freopen(in_file.c_str(), "w", stdout);
-        fclose(create_in_file);
+	FILE *exist_in_file;
+    exist_in_file = freopen(in_file.c_str(), "r", stdin);
+    if(!exist_in_file){
+        exist_in_file = freopen(in_file.c_str(), "w", stdout);
+        fclose(exist_in_file);
     }
 
 	freopen(in_file.c_str(), "r", stdin);
@@ -118,7 +118,7 @@ int main()
 	if(getenv("LOCAL")){setIO();}
 	int T=1;
 	FO(tc, T){
-		// cout << "Case #" << tc << ":";
+		// cout << "Case #" << tc+1 << ":";
 		solve();
 	}	
 	return 0;
