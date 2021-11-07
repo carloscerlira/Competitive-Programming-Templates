@@ -91,8 +91,7 @@ struct RangeUpdate {
     }
 };
  
-int main()
-{
+int main(){
     vector<int> arr= {3,2,1};
     int n = arr.size();
     SegmentTree<int> st = SegmentTree<int>(n);
