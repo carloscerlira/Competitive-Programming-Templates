@@ -12,7 +12,7 @@ int bfs(int s, int t, vector<int>& parent) {
     queue<pair<int, int>> q;
     q.push({s, INF});
 
-    while (!q.empty()) {
+    while(!q.empty()) {
         int cur = q.front().first;
         int flow = q.front().second;
         q.pop();
