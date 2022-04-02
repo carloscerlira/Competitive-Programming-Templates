@@ -27,6 +27,7 @@ typedef vector<ll> vll;
 typedef pair<int, int> pii;
 typedef pair<ll, ll> pll;
 
+// cout << setprecision(11);
 const ll MOD = 1e9 + 7;
 const ll INF = 1e9;
 
@@ -37,11 +38,11 @@ void setIO(){
 	string out_file = file+"out";
 
 	FILE *exist_in_file;
-	exist_in_file = freopen(in_file.c_str(), "r", stdin);
-	if(!exist_in_file){
-		exist_in_file = freopen(in_file.c_str(), "w", stdout);
-		fclose(exist_in_file);
-	}
+    exist_in_file = freopen(in_file.c_str(), "r", stdin);
+    if(!exist_in_file){
+        exist_in_file = freopen(in_file.c_str(), "w", stdout);
+        fclose(exist_in_file);
+    }
 
 	freopen(in_file.c_str(), "r", stdin);
 	freopen(out_file.c_str(), "w", stdout);
@@ -87,28 +88,37 @@ void _debug(vector<vector<T>>& A){
 
 template <typename T>
 void print(T& x){
-	cout << x << endl;
+	cout << x;
 	return;
 }
-
 template <typename T>
 void print(vector<T>& vec, int a=0, int b=-1){
 	if(b == -1){b = sz(vec);}
 	if(b == 0){return;}
 	FOR(i, a, b-1){
-		cout << vec[i] << " ";
+		print(vec[i]); cout << " ";
 	}
-	cout << vec[b-1] << endl;
+	print(vec[b-1]);
 	return; 
 }
+
+template <typename T>
+void print(vector<vector<T>>& A){
+	int n = sz(A);
+	cout << endl;
+	FO(i, n){
+		print(A[i]); cout << endl;
+	}
+}
+
 
 const int N = 1e5;
 
 void solve(){
 	int n; cin >> n;
-	vi nums(n);
+	vi nums(n, 0);
 	FO(i, n) cin >> nums[i];
-	debug(nums);
+	print(nums);
 	return;
 }
 
