@@ -27,7 +27,6 @@ typedef vector<ll> vll;
 typedef pair<int, int> pii;
 typedef pair<ll, ll> pll;
 
-// cout << setprecision(11);
 const ll MOD = 1e9 + 7;
 const ll INF = 1e9;
 
@@ -38,11 +37,11 @@ void setIO(){
 	string out_file = file+"out";
 
 	FILE *exist_in_file;
-    exist_in_file = freopen(in_file.c_str(), "r", stdin);
-    if(!exist_in_file){
-        exist_in_file = freopen(in_file.c_str(), "w", stdout);
-        fclose(exist_in_file);
-    }
+	exist_in_file = freopen(in_file.c_str(), "r", stdin);
+	if(!exist_in_file){
+		exist_in_file = freopen(in_file.c_str(), "w", stdout);
+		fclose(exist_in_file);
+	}
 
 	freopen(in_file.c_str(), "r", stdin);
 	freopen(out_file.c_str(), "w", stdout);
