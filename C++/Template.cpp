@@ -7,7 +7,7 @@ using namespace std;
 // using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 #define endl                        '\n'
-#define fastIO()                    ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+#define fastIO()                    ios_base::sync_with_stdio(0); cin.tie(0);
 #define FO(i, b)                    for (int i = 0; i < (b); i++)
 #define FOR(i, a, b)                for (int i = (a); i < (b); i++)
 #define rFOR(i, a, b)               for (int i = (a); i > (b); i--)
@@ -32,104 +32,111 @@ const ll MOD = 1e9 + 7;
 const ll INF = 1e9;
 
 void setIO(){
-	string file = __FILE__;
-	file = string(file.begin(), file.end()-3);
-	string in_file = file+"in";
-	string out_file = file+"out";
+    string file = __FILE__;
+    file = string(file.begin(), file.end()-3);
+    string in_file = file+"in";
+    string out_file = file+"out";
 
-	FILE *exist_in_file;
+    FILE *exist_in_file;
     exist_in_file = freopen(in_file.c_str(), "r", stdin);
     if(!exist_in_file){
         exist_in_file = freopen(in_file.c_str(), "w", stdout);
         fclose(exist_in_file);
     }
 
-	freopen(in_file.c_str(), "r", stdin);
-	freopen(out_file.c_str(), "w", stdout);
+    freopen(in_file.c_str(), "r", stdin);
+    freopen(out_file.c_str(), "w", stdout);
 }
 
 template <typename T>
 void _debug(T& x){
-	cout << x;
+    cout << x;
 }
 
 template <typename T1, typename T2>
 void _debug(pair<T1, T2>& pair){
-	cout << "{"; _debug(pair.F); cout << ","; _debug(pair.S); cout << "}";  
+    cout << "{"; _debug(pair.F); cout << ","; _debug(pair.S); cout << "}";  
 }
 
 template <typename T>
 void _debug(vector<T>& vec){
-	int n = sz(vec);
-	if(n == 0){cout << "[ ]"; return;}
-	cout << "[";
-	FO(i, n-1){
-		_debug(vec[i]); cout << " ";
-	}
-	_debug(vec[n-1]); cout << "]";
+    int n = sz(vec);
+    if(n == 0){cout << "[ ]"; return;}
+    cout << "[";
+    FO(i, n-1){
+        _debug(vec[i]); cout << " ";
+    }
+    _debug(vec[n-1]); cout << "]";
 }
 
 void _debug(vector<string>& vec){
-	int n = sz(vec);
-	cout << endl;
-	FO(i, n){
-		cout << vec[i] << endl;
-	}
+    int n = sz(vec);
+    cout << endl;
+    FO(i, n){
+        cout << vec[i] << endl;
+    }
 }
 
 template <typename T>
 void _debug(vector<vector<T>>& A){
-	int n = sz(A);
-	cout << endl;
-	FO(i, n){
-		_debug(A[i]); cout << endl;
-	}
+    int n = sz(A);
+    cout << endl;
+    FO(i, n){
+        _debug(A[i]); cout << endl;
+    }
 }
 
 template <typename T>
 void print(T& x){
-	cout << x;
-	return;
+    cout << x;
+    return;
 }
 template <typename T>
 void print(vector<T>& vec, int a=0, int b=-1){
-	if(b == -1){b = sz(vec);}
-	if(b == 0){return;}
-	FOR(i, a, b-1){
-		print(vec[i]); cout << " ";
-	}
-	print(vec[b-1]);
-	return; 
+    if(b == -1){b = sz(vec);}
+    if(b == 0){return;}
+    FOR(i, a, b-1){
+        print(vec[i]); cout << " ";
+    }
+    print(vec[b-1]);
+    return; 
+}
+
+void print(vector<string>& vec){
+    int n = sz(vec);
+    FO(i, n-1){
+        cout << vec[i] << endl;
+    }
+    cout << vec[n-1];
 }
 
 template <typename T>
 void print(vector<vector<T>>& A){
-	int n = sz(A);
-	cout << endl;
-	FO(i, n){
-		print(A[i]); cout << endl;
-	}
+    int n = sz(A);
+    FO(i, n){
+        print(A[i]); cout << endl;
+    }
 }
 
 
 const int N = 1e5;
 
 void solve(){
-	int n; cin >> n;
-	vi nums(n, 0);
-	FO(i, n) cin >> nums[i];
-	print(nums);
-	return;
+    int n; cin >> n;
+    vi nums(n, 0);
+    FO(i, n) cin >> nums[i];
+    print(nums);
+    return;
 }
 
 int main()
 {
-	fastIO();
-	if(getenv("LOCAL")){setIO();}
-	int T=1;
-	FO(tc, T){
-		// cout << "Case #" << tc+1 << ":";
-		solve();
-	}	
-	return 0;
+    fastIO();
+    if(getenv("USER")){setIO();}
+    int T=1;
+    FO(tc, T){
+        // cout << "Case #" << tc+1 << ":";
+        solve();
+    }	
+    return 0;
 }
