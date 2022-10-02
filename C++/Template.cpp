@@ -7,7 +7,7 @@ using namespace std;
 // using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 #define endl                        '\n'
-#define fastIO()                    ios_base::sync_with_stdio(0); cin.tie(0);
+#define fastIO()                    cin.tie(0)->sync_with_stdio(0);
 #define FO(i, b)                    for (int i = 0; i < (b); i++)
 #define FOR(i, a, b)                for (int i = (a); i < (b); i++)
 #define rFOR(i, a, b)               for (int i = (a); i > (b); i--)
@@ -27,7 +27,7 @@ typedef vector<ll> vll;
 typedef pair<int, int> pii;
 typedef pair<ll, ll> pll;
 
-// cout << setprecision(11);
+// cout << fixed << setprecision(11);
 const ll MOD = 1e9 + 7;
 const ll INF = 1e9;
 
