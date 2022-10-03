@@ -123,7 +123,7 @@ const int N = 1e5;
 
 void solve(){
     int n; cin >> n;
-    vi nums(n, 0);
+    vi nums(n);
     FO(i, n) cin >> nums[i];
     print(nums);
     return;
