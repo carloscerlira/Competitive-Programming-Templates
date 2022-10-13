@@ -118,14 +118,13 @@ void print(vector<vector<T>>& A){
     }
 }
 
-
 const int N = 1e5;
 
 void solve(){
     int n; cin >> n;
-    vi nums(n);
-    FO(i, n) cin >> nums[i];
-    print(nums);
+    vi a(n);
+    FO(i, n) cin >> a[i];
+    // print(a);
     return;
 }
 
@@ -133,7 +132,7 @@ int main()
 {
     fastIO();
     if(getenv("USER")){setIO();}
-    int T=1;
+    int T; cin >> T;
     FO(tc, T){
         // cout << "Case #" << tc+1 << ":";
         solve();
