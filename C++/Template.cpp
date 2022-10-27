@@ -12,7 +12,7 @@ using namespace std;
 #define FOR(i, a, b)                for (int i = (a); i < (b); i++)
 #define rFOR(i, a, b)               for (int i = (a); i > (b); i--)
 #define TR(v, arr)                  for (auto& (v) : (arr))
-#define debug(x)                    cout << #x << " = "; _debug(x); cout << endl;
+#define debug(x...)                 cout << #x << " = "; __debug(x); cout << endl;
 #define pb                          push_back
 #define mp                          make_pair
 #define F                           first
@@ -63,28 +63,27 @@ void _debug(vector<T>& vec){
     int n = sz(vec);
     if(n == 0){cout << "[ ]"; return;}
     cout << "[";
-    FO(i, n-1){
-        _debug(vec[i]); cout << " ";
-    }
+    FO(i, n-1){_debug(vec[i]); cout << " ";}
     _debug(vec[n-1]); cout << "]";
 }
 
 void _debug(vector<string>& vec){
     int n = sz(vec);
     cout << endl;
-    FO(i, n){
-        cout << vec[i] << endl;
-    }
+    FO(i, n) cout << vec[i] << endl;
 }
 
 template <typename T>
 void _debug(vector<vector<T>>& A){
     int n = sz(A);
     cout << endl;
-    FO(i, n){
-        _debug(A[i]); cout << endl;
-    }
+    FO(i, n){_debug(A[i]); cout << endl;}
 }
+
+void __debug() {}
+
+template <typename T, typename... V>
+void __debug(T t, V... v) {_debug(t); if (sizeof...(v)) cout << ", "; __debug(v...);}
 
 template <typename T>
 void print(T& x){
@@ -95,27 +94,21 @@ template <typename T>
 void print(vector<T>& vec, int a=0, int b=-1){
     if(b == -1){b = sz(vec);}
     if(b == 0){return;}
-    FOR(i, a, b-1){
-        print(vec[i]); cout << " ";
-    }
+    FOR(i, a, b-1){print(vec[i]); cout << " ";}
     print(vec[b-1]);
     return; 
 }
 
 void print(vector<string>& vec){
     int n = sz(vec);
-    FO(i, n-1){
-        cout << vec[i] << endl;
-    }
+    FO(i, n-1) cout << vec[i] << endl;
     cout << vec[n-1];
 }
 
 template <typename T>
 void print(vector<vector<T>>& A){
     int n = sz(A);
-    FO(i, n){
-        print(A[i]); cout << endl;
-    }
+    FO(i, n) print(A[i]); cout << endl;
 }
 
 const int N = 1e5;
@@ -124,7 +117,6 @@ void solve(){
     int n; cin >> n;
     vi a(n);
     FO(i, n) cin >> a[i];
-    // print(a);
     return;
 }
 
