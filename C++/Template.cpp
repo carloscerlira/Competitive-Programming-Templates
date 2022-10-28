@@ -12,7 +12,7 @@ using namespace std;
 #define FOR(i, a, b)                for (int i = (a); i < (b); i++)
 #define rFOR(i, a, b)               for (int i = (a); i > (b); i--)
 #define TR(v, arr)                  for (auto& (v) : (arr))
-#define debug(x...)                 cout << #x << " = "; __debug(x); cout << endl;
+#define debug(x...)                 cout << #x << " = "; debug2(x); cout << endl;
 #define pb                          push_back
 #define mp                          make_pair
 #define F                           first
@@ -80,10 +80,10 @@ void _debug(vector<vector<T>>& A){
     FO(i, n){_debug(A[i]); cout << endl;}
 }
 
-void __debug() {}
+void debug2() {}
 
 template <typename T, typename... V>
-void __debug(T t, V... v) {_debug(t); if (sizeof...(v)) cout << ", "; __debug(v...);}
+void debug2(T t, V... v) {_debug(t); if (sizeof...(v)) cout << ", "; debug2(v...);}
 
 template <typename T>
 void print(T& x){
