@@ -7,6 +7,7 @@ using namespace std;
 // using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 #define endl                        '\n'
+#define int                         long long
 #define fastIO()                    cin.tie(0)->sync_with_stdio(0);
 #define FO(i, b)                    for (int i = 0; i < (b); i++)
 #define FOR(i, a, b)                for (int i = (a); i < (b); i++)
@@ -21,15 +22,12 @@ using namespace std;
 #define sz(x)                       (int) x.size()
 #define LB(arr, x)                  lower_bound(all(arr), x)-(arr).begin()
 #define UB(arr, x)                  upper_bound(all(arr), x)-(arr).begin()
-typedef long long ll;
 typedef vector<int> vi;
-typedef vector<ll> vll;
 typedef pair<int, int> pii;
-typedef pair<ll, ll> pll;
-
 // cout << fixed << setprecision(11);
-const ll MOD = 1e9 + 7;
-const ll INF = 1e9;
+
+const int MOD = 1e9+7;
+const int INF = 1e18; 
 
 void setIO(){
     string file = __FILE__;
@@ -120,7 +118,7 @@ void solve(){
     return;
 }
 
-int main()
+signed main()
 {
     fastIO();
     if(getenv("USER")){setIO();}
