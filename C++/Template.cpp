@@ -9,39 +9,37 @@ using namespace std;
 #define endl                        '\n'
 #define int                         long long
 #define fastIO()                    cin.tie(0)->sync_with_stdio(0);
-#define FO(i, b)                    for (int i = 0; i < (b); i++)
-#define FOR(i, a, b)                for (int i = (a); i < (b); i++)
-#define rFOR(i, a, b)               for (int i = (a); i > (b); i--)
-#define TR(v, arr)                  for (auto& (v) : (arr))
 #define debug(x...)                 cout << #x << " = "; debug2(x); cout << endl;
+#define fo(i, b)                    for (long long i = 0; i < (b); i++)
+#define f0r(i, a, b)                for (long long i = (a); i < (b); i++)
+#define rf0r(i, a, b)               for (long long i = (a); i > (b); i--)
+#define tr(v, arr)                  for (auto& (v) : (arr))
 #define pb                          push_back
 #define mp                          make_pair
-#define F                           first
-#define S                           second
+#define f                           first
+#define s                           second
 #define all(x)                      x.begin(), x.end() 
 #define sz(x)                       (int) x.size()
-#define LB(arr, x)                  lower_bound(all(arr), x)-(arr).begin()
-#define UB(arr, x)                  upper_bound(all(arr), x)-(arr).begin()
+#define lb(arr, x)                  lower_bound(all(arr), x)-(arr).begin()
+#define ub(arr, x)                  upper_bound(all(arr), x)-(arr).begin()
 typedef vector<int> vi;
 typedef pair<int, int> pii;
 // cout << fixed << setprecision(11);
 
-const int MOD = 1e9+7;
-const int INF = 1e18; 
+const long long mod = 1e9+7;
+const long long inf = 1e18; 
 
 void setIO(){
     string file = __FILE__;
     file = string(file.begin(), file.end()-3);
     string in_file = file+"in";
     string out_file = file+"out";
-
     FILE *exist_in_file;
     exist_in_file = freopen(in_file.c_str(), "r", stdin);
     if(!exist_in_file){
         exist_in_file = freopen(in_file.c_str(), "w", stdout);
         fclose(exist_in_file);
     }
-
     freopen(in_file.c_str(), "r", stdin);
     freopen(out_file.c_str(), "w", stdout);
 }
@@ -53,7 +51,7 @@ void _debug(T& x){
 
 template <typename T1, typename T2>
 void _debug(pair<T1, T2>& pair){
-    cout << "{"; _debug(pair.F); cout << ","; _debug(pair.S); cout << "}";  
+    cout << "{"; _debug(pair.f); cout << ","; _debug(pair.s); cout << "}";  
 }
 
 template <typename T>
@@ -61,21 +59,19 @@ void _debug(vector<T>& vec){
     int n = sz(vec);
     if(n == 0){cout << "[ ]"; return;}
     cout << "[";
-    FO(i, n-1){_debug(vec[i]); cout << " ";}
+    fo(i, n-1){_debug(vec[i]); cout << " ";}
     _debug(vec[n-1]); cout << "]";
 }
 
 void _debug(vector<string>& vec){
-    int n = sz(vec);
     cout << endl;
-    FO(i, n) cout << vec[i] << endl;
+    fo(i, sz(vec)) cout << vec[i] << endl;
 }
 
 template <typename T>
 void _debug(vector<vector<T>>& A){
-    int n = sz(A);
     cout << endl;
-    FO(i, n){_debug(A[i]); cout << endl;}
+    fo(i, sz(A)){_debug(A[i]); cout << endl;}
 }
 
 void debug2() {}
@@ -85,28 +81,26 @@ void debug2(T t, V... v) {_debug(t); if (sizeof...(v)) cout << ", "; debug2(v...
 
 template <typename T>
 void print(T& x){
-    cout << x;
+    cout << x << endl;
     return;
 }
 template <typename T>
 void print(vector<T>& vec, int a=0, int b=-1){
     if(b == -1){b = sz(vec);}
     if(b == 0){return;}
-    FOR(i, a, b-1){print(vec[i]); cout << " ";}
-    print(vec[b-1]);
+    f0r(i, a, b-1){cout << vec[i] << " ";}
+    cout << vec[b-1] << endl;
     return; 
 }
 
 void print(vector<string>& vec){
-    int n = sz(vec);
-    FO(i, n-1) cout << vec[i] << endl;
-    cout << vec[n-1];
+    fo(i, sz(vec)-1) cout << vec[i] << endl;
+    cout << vec[sz(vec)-1] << " ";
 }
 
 template <typename T>
 void print(vector<vector<T>>& A){
-    int n = sz(A);
-    FO(i, n) print(A[i]); cout << endl;
+    fo(i, sz(A)) print(A[i]); cout << endl;
 }
 
 const int N = 1e5;
@@ -114,16 +108,16 @@ const int N = 1e5;
 void solve(){
     int n; cin >> n;
     vi a(n);
-    FO(i, n) cin >> a[i];
+    fo(i, n) cin >> a[i];
     return;
 }
 
 signed main()
 {
     fastIO();
-    if(getenv("USER")){setIO();}
+    if(getenv("USER")) setIO();
     int T; cin >> T;
-    FO(tc, T){
+    fo(tc, T){
         // cout << "Case #" << tc+1 << ":";
         solve();
     }	
