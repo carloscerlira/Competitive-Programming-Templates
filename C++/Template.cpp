@@ -89,8 +89,7 @@ void print(vector<T>& vec, int a=0, int b=-1){
 }
 
 void print(vector<string>& vec){
-    fo(i, sz(vec)-1) cout << vec[i] << endl;
-    cout << vec[sz(vec)-1] << " ";
+    fo(i, sz(vec)) cout << vec[i] << endl;
 }
 
 template <typename T>
