@@ -1,10 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-// #include <ext/pb_ds/assoc_container.hpp>
-// #include <ext/pb_ds/tree_policy.hpp>
-// using namespace __gnu_pbds;
-// template <typename T>
-// using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 #define endl                        '\n'
 #define int                         long long
@@ -16,8 +11,8 @@ using namespace std;
 #define tr(v, arr)                  for (auto& (v) : (arr))
 #define pb                          push_back
 #define mp                          make_pair
-#define f                           first
-#define s                           second
+#define F                           first
+#define S                           second
 #define all(x)                      x.begin(), x.end() 
 #define sz(x)                       (int) x.size()
 #define lb(arr, x)                  lower_bound(all(arr), x)-(arr).begin()
@@ -51,7 +46,7 @@ void _debug(T& x){
 
 template <typename T1, typename T2>
 void _debug(pair<T1, T2>& pair){
-    cout << "{"; _debug(pair.f); cout << ","; _debug(pair.s); cout << "}";  
+    cout << "{"; _debug(pair.F); cout << ","; _debug(pair.S); cout << "}";  
 }
 
 template <typename T>
@@ -86,9 +81,9 @@ void print(T& x){
 }
 template <typename T>
 void print(vector<T>& vec, int a=0, int b=-1){
-    if(b == -1){b = sz(vec);}
-    if(b == 0){return;}
-    f0r(i, a, b-1){cout << vec[i] << " ";}
+    if(b == -1) b = sz(vec);
+    if(b == 0) return;
+    f0r(i, a, b-1) cout << vec[i] << " ";
     cout << vec[b-1] << endl;
     return; 
 }
@@ -100,7 +95,7 @@ void print(vector<string>& vec){
 
 template <typename T>
 void print(vector<vector<T>>& A){
-    fo(i, sz(A)) print(A[i]); cout << endl;
+    fo(i, sz(A)) print(A[i]);
 }
 
 const int N = 1e5;
