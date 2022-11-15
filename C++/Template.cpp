@@ -5,6 +5,7 @@ using namespace std;
 #define int                         long long
 #define fastIO()                    cin.tie(0)->sync_with_stdio(0);
 #define debug(x...)                 cout << #x << " = "; debug2(x); cout << endl;
+#define print(x...)                 print2(x);
 #define fo(i, b)                    for (long long i = 0; i < (b); i++)
 #define f0r(i, a, b)                for (long long i = (a); i < (b); i++)
 #define rf0r(i, a, b)               for (long long i = (a); i > (b); i--)
@@ -75,12 +76,12 @@ template <typename T, typename... V>
 void debug2(T t, V... v) {_debug(t); if (sizeof...(v)) cout << ", "; debug2(v...);}
 
 template <typename T>
-void print(T& x){
+void _print(T& x){
     cout << x << endl;
     return;
 }
 template <typename T>
-void print(vector<T>& vec, int a=0, int b=-1){
+void _print(vector<T>& vec, int a=0, int b=-1){
     if(b == -1) b = sz(vec);
     if(b == 0) return;
     f0r(i, a, b-1) cout << vec[i] << " ";
@@ -88,14 +89,19 @@ void print(vector<T>& vec, int a=0, int b=-1){
     return; 
 }
 
-void print(vector<string>& vec){
+void _print(vector<string>& vec){
     fo(i, sz(vec)) cout << vec[i] << endl;
 }
 
 template <typename T>
-void print(vector<vector<T>>& A){
+void _print(vector<vector<T>>& A){
     fo(i, sz(A)) print(A[i]);
 }
+
+void print2() {}
+
+template <typename T, typename... V>
+void print2(T t, V... v) {_print(t); if (sizeof...(v)) print2(v...);}
 
 const int N = 1e5;
 
